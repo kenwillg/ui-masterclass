@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq6sfaf8ltrxt"]
+[gd_scene load_steps=8 format=3 uid="uid://dq6sfaf8ltrxt"]
+
+[ext_resource type="Script" uid="uid://5kn1kq4hlm0o" path="res://src/menu/menu.gd" id="1_lti8b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsb4k"]
 bg_color = Color(0.158472, 0.158472, 0.158472, 1)
@@ -38,13 +40,14 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 anti_aliasing = false
 
-[node name="Control" type="Control"]
+[node name="menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lti8b")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -180,3 +183,5 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
 text = "See more"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
